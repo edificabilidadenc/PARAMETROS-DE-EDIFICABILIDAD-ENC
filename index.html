@@ -39,7 +39,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-27.38116716828098,-55.96259712929017],[-27.270239169269573,-55.735501229886204]]);
+        }).fitBounds([[-27.437885329130467,-56.14111262354442],[-27.175198297054322,-55.61439364600907]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -181,8 +181,15 @@
                         <td>' + (feature.properties['NOM_AMBITO'] !== null ? autolinker.link(String(feature.properties['NOM_AMBITO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">ALTURA_MAX</th>\
-                        <td>' + (feature.properties['ALTURA_MAX'] !== null ? autolinker.link(String(feature.properties['ALTURA_MAX']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">NUM_AMBITO</th>\
+                        <td class="visible-with-data" id="NUM_AMBITO">' + (feature.properties['NUM_AMBITO'] !== null ? autolinker.link(String(feature.properties['NUM_AMBITO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ALFA_AMB</th>\
+                        <td>' + (feature.properties['ALFA_AMB'] !== null ? autolinker.link(String(feature.properties['ALFA_AMB']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ALTURA_MAX'] !== null ? autolinker.link(String(feature.properties['ALTURA_MAX']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">FOT</th>\
@@ -197,8 +204,10 @@
                         <td>' + (feature.properties['FIT'] !== null ? autolinker.link(String(feature.properties['FIT']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">FAP</th>\
-                        <td>' + (feature.properties['FAP'] !== null ? autolinker.link(String(feature.properties['FAP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['FAP'] !== null ? autolinker.link(String(feature.properties['FAP']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['IMAGEN'] !== null ? autolinker.link(String(feature.properties['IMAGEN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">GRAFICO</th>\
